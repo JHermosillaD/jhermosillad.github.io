@@ -1,0 +1,3 @@
+[submodule "jhermosillad/themes/charlolamode"]
+	path = jhermosillad/themes/charlolamode
+	url = https://github.com/charlola/hugo-theme-charlolamode.git
