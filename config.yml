@@ -17,7 +17,7 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-
+    
 params:
     author: Authors Name
     defaultTheme: auto
@@ -28,7 +28,6 @@ params:
         icon: "/logo.png"
         iconHeight: 35
     profileMode:
-        # Disable to populate home page with 'mainSections' content
         enabled: true
         title: Jesus Eduardo Hermosilla Diaz
         subtitle: "Hello, I'm an enthusiastic physicist in computer science and artificial intelligence from Mexico."
@@ -43,6 +42,10 @@ params:
           url: "https://www.linkedin.com/in/jesus-hermosilla/"
         - name: email
           url: "mailto:hermosilladiaz@gmail.com"
+    mainSections:
+        - posts
+        - projects
+        - teaching
 
 menu:
   main:

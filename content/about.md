@@ -1,5 +1,5 @@
 # About me
-<html>
+<html lang="en">
 <head>
 <style>
 div {
