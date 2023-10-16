@@ -40,7 +40,6 @@ Therefore, the player should be capable of substituing a frame like this:
 <p>
 Current Outcome (by now):
 </p>
-
 <div id="buttons">
     <div class="button1">
         <input class="backward" type="button" value="Backward" id=BACKWARD />
@@ -57,6 +56,11 @@ Current Outcome (by now):
 <div class="slidecontainer" id=VOLUME>
     <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
 </div>
+<hr>
+<p>
+<a href="[url](https://github.com/JHermosillaD/YoutubeMusicWidget)">Widget Source Repository</a>
+</p>
+
 </body>
 
 <style>
