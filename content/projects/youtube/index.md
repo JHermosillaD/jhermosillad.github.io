@@ -1,4 +1,10 @@
-# YouTube Music Widget
++++
+author = 'Jesus Hermosilla'
+title = "YouTube Music Widget"
+date = 2021-11-26T13:23:00-04:00
+draft = false
+summary = "Custom widget for Notion based on Youtube Music API."
++++
 
 <html lang="en">
 <head>
@@ -29,6 +35,7 @@ function onYouTubePlayerAPIReady() {
     });
 }
 ```
+
 <p>
 Therefore, the player should be capable of substituing a frame like this:
 </p>
@@ -64,7 +71,7 @@ Current Outcome (by now):
 </body>
 
 <style>
-	body {
+ body {
         display: flex;
         flex-flow: column wrap;
      }
@@ -82,7 +89,7 @@ Current Outcome (by now):
         width: 50%;
     }
     .forward {
-    	border: 0;
+     border: 0;
         background: transparent;
         box-sizing: border-box;
         width: 74px;
@@ -94,7 +101,7 @@ Current Outcome (by now):
         border-width: 37px 0 37px 60px;
     }
     .backward {
-    	border: 0;
+     border: 0;
         background: transparent;
         box-sizing: border-box;
         width: 74px;
@@ -127,7 +134,7 @@ Current Outcome (by now):
         }
         &:focus + label {
           box-shadow: 0 0 5px lightblue;
-    	border-color: transparent transparent transparent #404040;
+     border-color: transparent transparent transparent #404040;
         }
       }
     }
@@ -141,7 +148,7 @@ Current Outcome (by now):
         -webkit-transition: .5s;
         transition: opacity .5s;
     }
- 
+
     .slider:hover {
         opacity: 0.8;
     }
@@ -159,9 +166,9 @@ Current Outcome (by now):
 <script>
     var tag = document.createElement("script");
     tag.src = "//www.youtube.com/player_api";
-    var firstScriptTag = document.getElementsByTagName("script")[0];
+    var firstScriptTag = document.getElementsByTagName["script"](0);
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
- 
+
     var player;
     function onYouTubePlayerAPIReady() {
       player = new YT.Player("playlist", {
@@ -172,7 +179,7 @@ Current Outcome (by now):
       });
     }
 
-    function onPlayerReady(event) {   
+    function onPlayerReady(event) {
     var playButton = document.getElementById("playpause");
     playButton.addEventListener("click", function() {
         player.playVideo();
@@ -187,18 +194,18 @@ Current Outcome (by now):
           player.previousVideo();
       });
       document.getElementById("myRange").addEventListener("change", function() {
-      	var volume = this.value;
+       var volume = this.value;
         player.setVolume(volume);
       });
       document.getElementById("title").innerText = player.getVideoData().title;
     }
-    
+
     function onPlayerStateChange(event) {
-    	var playButton = document.getElementById("playpause");
+     var playButton = document.getElementById("playpause");
         playButton.addEventListener("click", function() {
-      	if (player.getPlayerState() == 1) {
-        	player.pauseVideo();
-      	}
+       if (player.getPlayerState() == 1) {
+         player.pauseVideo();
+       }
       }, false);
       document.getElementById("title").innerText = player.getVideoData().title;
     }
