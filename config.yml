@@ -15,7 +15,7 @@ markup:
       unsafe: true
       
 params:
-    defaultTheme: light
+    defaultTheme: dark
     ShowShareButtons: false
     ShowReadingTime: false
     displayFullLangName: false
@@ -27,8 +27,8 @@ params:
     profileMode:
         enabled: true
         title: Jesus Eduardo Hermosilla Diaz
-        subtitle: "Hello, I'm an enthusiastic physicist in computer science and artificial intelligence from Mexico."
-        imageUrl: "/profile.png"
+        subtitle: "Hey there! I'm a physicist pursuing an artificial intelligence Ph.D. in Mexico. Here, I keep a record of my academic odyssey."
+        imageUrl: "/profile.jpg"
         imageTitle: Profile image
         imageWidth: 350
         imageHeight: 350
