@@ -1,7 +1,7 @@
 +++
 title = 'Acerca de los poemas'
 date = 2023-11-12T10:27:06-06:00
-draft = true
+draft = false
 +++
 
 <html lang="en">
@@ -17,7 +17,7 @@ draft = true
     text-align: center;
     font-family: Cursive;
     font-weight: normal;
-    font-size: medium;
+    font-size: 24px;
     }
     </style>
 </head>
