@@ -1,7 +1,7 @@
 +++
-title = 'Jesus Eduardo Hermosilla Diaz'
+title = 'Jesús Eduardo Hermosilla Díaz'
 date = 2023-11-11T10:25:57-06:00
-draft = true
+draft = false
 +++
 
 <html lang="en">
@@ -9,85 +9,119 @@ draft = true
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>  
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/js/load-photoswipe.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </head>
 
 <style>
-body {
-  color: black;
-}
 
-h1 {
-  color: blue;
-}
 </style>
 
 <body>
+<hr>
 
----
-  - <span class="iconify" data-icon="tabler:phone"></span> (+52) 922-119-9733
-  - <span class="iconify" data-icon="tabler:mail"></span> hermosilladiaz@gmail.com
-    link: mailto:hermosilladiaz@gmail.com
-  - <span class="iconify" data-icon="tabler:brand-github"></span> JHermosillaD
-    link: https://github.com/JHermosillaD
-  - <span class="iconify" data-icon="tabler:brand-linkedin"></span> jesus-hermosilla
-    link: https://www.linkedin.com/in/jesus-hermosilla/
-  - <span class="iconify" data-icon="ic:outline-location-on"></span> Xalapa, Veracruz, Mexico
-    newLine: true
----
+## Contact
+<pre>
+  <iconify-icon icon="line-md:my-location-loop" width="24" height="24"></iconify-icon> Location: Xalapa, Veracruz, Mexico
+  <iconify-icon icon="line-md:email-opened-twotone-alt" width="24" height="24"></iconify-icon> <a href="mailto:hermosilladiaz@gmail.com">hermosilladiaz@gmail.com</a>
+</pre>
 
 ## Education
-**Universidad Veracruzana**
-  ~ Xalapa, Mexico
 
-M.S. in Physics
-  ~ 01/2016 - 01/2021
+<pre>
+2016-2021
+<b>M.Sc. in Physics</b>
+Universidad Veracruzana
+Xalapa, Veracruz
+Mexico
+</pre>
 
-**Universidad Veracruzana**
-  ~ Xalapa, Mexico
+<pre>
+2021-2023
+<b>B.Sc. in Artificial Intelligence</b>
+Universidad Veracruzana
+Xalapa, Veracruz
+Mexico
+</pre>
 
-B.Sc in Artificial Intelligence
-  ~ 09/2021 - 07/2023
-
-## Publications
-
-[~P1]: **You Only Cook Once: Unified, Real-Time Mapo Tofu Recipe**
-
-    <u>Haha Ha</u>, San Zhang, Si Li, Wu Wang
-
-    *Computer Vision and Pattern Recognition Conference (CVPR), 2077 **(Best Paper Honorable Mention)***
-
+<pre>
+2023-Present
+<b>Ph.D. in Artificial Intelligence</b>
+Universidad Veracruzana
+Xalapa, Veracruz
+Mexico
+</pre>
 
 ## Experience
 
-**Machine Learning Engineer Intern**
-  ~ Slow Feet Technology
-  ~ 07/2021 - Present
+<pre>
+<b>Research Assistant</b>
+Consejo Nacional de Ciencia y Tecnología (CONACYT)
+Jan 2021-Jun 2021
+<small><i>Proposed work methodologies for human interaction with autonomous vehicles.</i></small>
+</pre>
 
-- Devised a new food-agnostic formulation for fine-grained cross-ingredient meal cooking and subsumed the recent popular works into the proposed scheme
+<pre>
+<b>Research Collaborator</b>
+Hamburg University of Applied Sciences (HAW)
+May 2023-Jun 2023
+<small><i>Proposed pouring liquid model with a husky robot and a ur5 arm.</i></small>
+</pre>
 
-**Reseach Intern**
-  ~ Paddling University
-  ~ 08/2020 - Present
+<pre>
+<b>Online Data Analyst</b>
+TELUS International
+Jul 2023-Present
+<small><i>Analyzed queries based on geopositioning data.</i></small>
+</pre>
 
-- Designed an efficient method for mapo tofu quality estimation via thermometer
+<pre>
+<b>Mathematics Educator</b>
+Instituto Villa de Cortés (IVCX)
+Aug 2023-Present
+<small><i>Mathematics teacher at high school level.</i></small>
+</pre>
 
-**Research Assistant**
-  ~ Huangdu Institute of Technology
-  ~ 03/2020 - 06/2020
-
-- Proposed a novel framework consisting of a spoon and a pair of chopsticks for eating mapo toufu
-
-**Reseach Intern**
-  ~ Paddling University
-  ~ 07/2018 - 08/2018
-
-- Designed two sandwiches consisting of breads and meat of two traditional bacon cheese burgers to make use of unused ingredients
+<pre>
+<b>Researcher Ph.D. Student</b>
+Artificial Intelligence Research Institute
+Jul 2023-Present
+<small><i>Development of human-robot interaction models for mobile robot navigation.</i></small>
+</pre>
 
 ## Skills
-**Programming Languages:** <span class="iconify" data-icon="vscode-icons:file-type-python"></span> Python, <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript / <span class="iconify" data-icon="vscode-icons:file-type-typescript-official"></span> TypeScript, <span class="iconify" data-icon="vscode-icons:file-type-html"></span> HTML / <span class="iconify" data-icon="vscode-icons:file-type-css"></span> CSS, <span class="iconify" data-icon="logos:java" data-inline="false"></span> Java
 
-**Tools and Frameworks:** Git, PyTorch, Keras, scikit-learn, Linux, Vue, React, Django, $\LaTeX$
+<pre>
+<b>Main skills</b>
+Collaboration, time management, analytical reasoning, teamwork, didactic teaching.
+</pre>
 
-**Languages:** Spanish (native), English (proficient)
+<pre>
+<b>Programming languages</b>
+Python, C, C++, Mathematica, Prolog, Lisp.
+</pre>
+
+<pre>
+<b>Tools and Frameworks</b>
+TensorFlow, Keras, scikit-learn, OpenCV, LaTex, Git, ROS, GNU Linux, Microsoft Office Suite
+</pre>
+
+## Lenguages
+
+<pre>
+<b>English proficiency</b>
+Certification TOEFL ITP, 590 points.
+</pre>
+
+<pre>
+<b>Spanish</b>
+Native
+</pre>
+
+## Some robotic systems used
+{{< gallery dir="/robots/" />}} {{< load-photoswipe >}}
 
 </body>
