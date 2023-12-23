@@ -1,5 +1,5 @@
 +++
-title = 'Jesús Eduardo Hermosilla Díaz'
+title = 'Jesús Eduardo Hermosilla Díaz' 
 date = 2023-11-11T10:25:57-06:00
 draft = false
 +++
@@ -17,28 +17,23 @@ draft = false
 </head>
 
 <style>
-
 </style>
 
 <body>
 <hr>
+<p align="justify">
+Master in Artificial Intelligence and passionate about AI research and applications. My areas of expertise include robotics, autonomous vehicles, and data science. I am a physicist with a solid scientific background with a view toward technological development. I am committed to education and science outreach.
+</p>
 
 ## Contact
 <pre>
-  <iconify-icon icon="line-md:my-location-loop" width="24" height="24"></iconify-icon> Location: Xalapa, Veracruz, Mexico
+  <iconify-icon icon="line-md:my-location-loop" width="22" height="22"></iconify-icon> Location: Xalapa, Veracruz, Mexico
   <iconify-icon icon="line-md:email-opened-twotone-alt" width="24" height="24"></iconify-icon> <a href="mailto:hermosilladiaz@gmail.com">hermosilladiaz@gmail.com</a>
+  <iconify-icon icon="line-md:github-twotone"></iconify-icon> <a href="https://github.com/JHermosillaD">JHermosillaD</a>
+  <iconify-icon icon="line-md:linkedin"></iconify-icon> <a href="www.linkedin.com/in/jesus-hermosilla">Jesus-hermosilla</a>
 </pre>
 
 ## Education
-
-<pre>
-2016-2021
-<b>M.Sc. in Physics</b>
-Universidad Veracruzana
-Xalapa, Veracruz
-Mexico
-</pre>
-
 <pre>
 2021-2023
 <b>B.Sc. in Artificial Intelligence</b>
