@@ -100,7 +100,8 @@ Jul 2023-Present
 
 <pre>
 <b>Main skills</b>
-Collaboration, time management, analytical reasoning, teamwork, didactic teaching.
+Collaboration, time management, analytical reasoning, teamwork,
+didactic teaching.
 </pre>
 
 <pre>
@@ -110,7 +111,8 @@ Python, C, C++, Mathematica, Prolog, Lisp.
 
 <pre>
 <b>Tools and Frameworks</b>
-TensorFlow, Keras, scikit-learn, OpenCV, LaTex, Git, ROS, GNU Linux, Microsoft Office Suite
+TensorFlow, Keras, scikit-learn, OpenCV, LaTex, Git, ROS, GNU
+Linux, Microsoft Office Suite
 </pre>
 
 ## Lenguages
