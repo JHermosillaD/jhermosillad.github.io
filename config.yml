@@ -16,10 +16,11 @@ markup:
       
 params:
     defaultTheme: dark
+    TocSide: 'right'
     ShowShareButtons: false
     ShowReadingTime: false
     displayFullLangName: false
-    ShowToc: false
+    ShowToc: true
     ShowBreadCrumbs: false
     label:
         icon: "/logo.png"
