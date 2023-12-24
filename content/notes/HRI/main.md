@@ -1,61 +1,126 @@
 +++
 author = 'Jesus Hermosilla'
-title = 'Human Robot Interaction 22'
+title = 'Human Robot Interaction'
 date = 2023-11-06T04:00:08-06:00
 draft = true
 +++
 
-<div style="text-align: justify">
-The term "robotics" was first coined in 1920, as a result of a a work of fictional play. However, proto-robots have existed since ancient times. From Atlas, the iron giant of Greek mythology, to the earliest robots designed for labor, these machines were created to replace physical tasks.
+<p align="justify"> 
+The term <em>Robot</em> (adapted from Czech <em>Roboti</em>) was first used in 1920 during a fictional play. However, proto-robots have existed since ancient times. From Atlas, the iron giant of Greek mythology, to the earliest service robots, these machines were created to replace physical tasks. 
+In modern times, humans have not only adopted technology to alleviate physical labor but also to enhance and satisfy our social needs. Increasing in consequence the development of so-called social robotics.
+</p>
 
-In modern times, humans have not only adopted technology to alleviate physical labor but also to enhance and meet our intricate social needs. This has led to a surge in the development of so-called social robots.
-</div>
+<p align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Capek_play.jpg/375px-Capek_play.jpg">
+Actual <em>Robotis</em> during a R.U.R play.
+</p>
 
-> Social robots need the ability recognize, understand, and predict human behavior in terms of the underlying mental states such as beliefs, intents, desires, feelings, etc.
+<p align="justify"> 
+<b>Human-robot interaction (HRI) refers to an interdisciplinary study of interactions between humans and robots </b>. However, now that the obvious has been clarified (supposedly), what exactly is an interaction? What kinds of robots are considered, and which ones are not? And even further, why do research in this area?.
+</p>
+
+<a id="item-one"></a>
+### About whom we are talking
+
+<p align="justify"> 
+It was a matter of time before large robotic systems faced their biggest challenge; dealing with human behavior. Today robots are not only present in large industrial processes but also in various cafes, airports, shopping malls and school campuses around the world. These kinds of robots take a step away from heavy industrial arms or traditional assembly lines because their tasks escape from the controlled environment routine and to sense humans and their changing state has became more necessary.
+
+There are many models of robots, but what makes them relevant in HRI is not their locomotion nor the environment in which they move, but their ability to detect, analyze and respond to the people around them. Using these abilities, robots can emulate behaviors involved in human society, thus, these robots have been called social robots.
+</p>
+
+> -- Social robots need the ability recognize, understand, and predict human behavior in terms of the underlying mental states such as beliefs, intents, desires, feelings, etc.
 > -- <cite>B. Sicilliano</cite>.
 
-In traditional motion planning, neither feedback nor dynamics is considered. A solution path is considered open loop, which means there is no feedback of information during execution to close the loop.
+<p align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Nao_Robot_%28Robocup_2016%29.jpg/270px-Nao_Robot_%28Robocup_2016%29.jpg" height="280">
+NAO, a social robot.
+</p>
 
-How a robot should maintain appropriate interpersonal distance, follow or approach a person?
+<p align="justify"> 
+In some ways, social robots have certain characteristics in common; a humanoid body, cameras for human detection, a size no larger than a person, etc. However, there also exist service robots. Although they can be confused and even used as a synonym with social robots, these do not stand out for their aesthetics but for being designed exclusively to fulfill their service tasks. Both have been used in the study of human-robot interaction; but service robots usually sacrifice humanoid aesthetics in favor of optimizing their functionalities to fulfill the purpose for which they were designed.
+</p>
 
-> Modelar la interacción de un robot de servicio con humanos puede contribuir al desa rrollo de un comportamiento cortés en espacios públicos?
+<p align="center">
+<img src="https://cdn.sanity.io/images/7p2whiua/production/4d87abeb9717993e461845fbe556916b6f064e14-1200x1000.jpg" height="280">
+PR2, a service robot.
+</p>
 
-> ... most path-planning algorithms that work well for navigating around obstacles will result in socially inappropriate behavior when tried around people.
-> -- <cite>HRI</cite>.
+<p align="justify"> 
+In some ways, what is learned in HRI can (and must) be extended to other areas. In autonomous vehicles, for example, path planning in pedestrian-free spaces is no longer a significant challenge and the focus has shifted to problems involving the human factor. In any case, when talking about human-robot interaction, we are referring to service or social robots that can move in a crowded environment without disturbing the social dynamics and with the potential to emulate their behavior.
+</p>
 
-Somethin -> new -> interesting -> providing solutions
-Possible contributions: identify parameters, scenarios, solid comparation
+### About how we are interacting
 
-Human awarnes path planning in human-robot interaction: A scoping review.
+<p align="justify"> 
+In traditional motion planning, neither feedback nor dynamics are considered.   Most path-planning algorithms that work well for navigating around obstacles will result in socially inappropriate behavior when tried around people. How a robot should maintain appropriate interpersonal distance, follow or approach a person?
+</p>
 
-***Novelty:*** 
 
-***Motivation:***
+<!---
+> -- Most studies lack a theoretical foundation and have methodological weaknesses, including low statistical power or questionable research practices, leading to a high false-positive rate or overestimated effect sizes. Solutions such as pre-registration, higher sample sizes, transparency and a more careful theoretical underpinning based on models of human spacing behavior are discussed.
+> -- <cite> B. Leichtmann and V. Nitsch</cite>.
 
-***Contribution:***
-
-## Research questions:
-
-### Socially dimension
-- What is the need for a socially appropriate navigation? (fundamentals, AI)
-- How has socially appropriate navigation been used in human-robot interaction?
-- What cultural aspects are taken into account?
-- What ethical aspects are taken into account?
-
-### Experimental dimension
-- How do we design scenarios to experiment? (independent vs. dependent variables)
-- How do we model socially appropriate navigation? (input, output, IA approach, model)
-- How do we evaluate socially appropriate navigation? (quantitative vs qualitative metrics, statistics)
-
-### Practical dimension
-- What are the primary application areas of socially appropriate navigation? (case studies and vs real-World applications)
-- What are the primary research topics within each application area? (trends)
-
-paga, tiempo de respuesta, indexado?, como lo buscaría yo
-acepta reviews,
- 
-Most studies lack a theoretical foundation and have methodological weaknesses, including low statistical power or questionable research practices, leading to a high false-positive rate or overestimated effect sizes. Solutions such as pre-registration, higher sample sizes, transparency and a more careful theoretical underpinning based on models of human spacing behavior are discussed.
-
-The most problematic area of evaluations in the context of human-aware navigation is the evaluation of comfort improve- ments due to changes in navigational decision making. The literature shows two main strategies in doing so, using a simulation based on a model ofwhat causes human-discomfort, or presenting participants with a robot and asking them to rate robot qualities via a questionnaire.
+> -- The most problematic area of evaluations in the context of human-aware navigation is the evaluation of comfort improvements due to changes in navigational decision making. The literature shows two main strategies in doing so, using a simulation based on a model ofwhat causes human-discomfort, or presenting participants with a robot and asking them to rate robot qualities via a questionnaire.
+> -- <cite> T. Kruse et. al.</cite>.
 
 The great difference between the simulation environment and the real-world one is the major challenge to transfer the trained model to a real robot. 
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.0"></script>
+</head>
+
+<style>
+.mindmap {
+  display: block;
+}  
+</style>
+
+<body>
+<svg id="mindmap" class="mindmap" width="700" height="250"></svg>
+</body>
+<script>
+((e, lang_json, other_json)=>{
+  const{Markmap:r}=e();
+  window.mm=r.create("svg#mindmap-lang",null,lang_json)
+})(()=>window.markmap,
+  {"t":"root","d":0,"v":"Interaction types", "c":[
+      {"t":"heading","d":1,"v":"Verbal", "c":[]},
+      {"t":"heading","d":1,"v":"Non-verbal", "c":[]},
+      {"t":"heading","d":1,"v":"Emotion based", "c":[]},
+      {"t":"heading","d":1,"v":"Spatial", "c":[
+          {"t":"heading","d":2,"v":"Socially appropiate mapping"},
+   {"t":"heading","d":2,"v":"Socially appropiate path planning"},
+   {"t":"heading","d":2,"v":"Socially appropiate positioning"},
+   {"t":"heading","d":2,"v":"Informing users of the robot’s intent"}
+      ]}
+  ]});
+</script>
+<script>
+((e, lang_json, other_json)=>{
+  const{Markmap:r}=e();
+  window.mm=r.create("svg#mindmap",null,lang_json)
+})(()=>window.markmap,
+  {"t":"root","d":0,"v":"Interaction types", "c":[
+      {"t":"heading","d":1,"v":"Verbal", "c":[]},
+      {"t":"heading","d":1,"v":"Non-verbal", "c":[]},
+      {"t":"heading","d":1,"v":"Emotion based", "c":[]},
+      {"t":"heading","d":1,"v":"Spatial", "c":[
+          {"t":"heading","d":2,"v":"Socially appropiate mapping"},
+   {"t":"heading","d":2,"v":"Socially appropiate path planning"},
+   {"t":"heading","d":2,"v":"Socially appropiate positioning"},
+   {"t":"heading","d":2,"v":"Informing users of the robot’s intent"}
+      ]}
+  ]});
+</script>
+-->
+
+References.
+
+- Breazeal, C., Dautenhahn, K., & Kanda, T. (2016). Social robotics. Springer handbook of robotics, 1935-1972.
+- Leichtmann, B., & Nitsch, V. (2020). How much distance do humans keep toward robots? Literature review, meta-analysis, and theoretical considerations on personal space in human-robot interaction. Journal of environmental Psychology, 68, 101386.
+- Kruse, T., Pandey, A. K., Alami, R., & Kirsch, A. (2013). Human-aware robot navigation: A survey. Robotics and Autonomous Systems, 61(12), 1726-1743.
+- Wikipedia contributors. (2023, November 6). R.U.R.. In Wikipedia, The Free Encyclopedia.
