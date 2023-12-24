@@ -30,13 +30,22 @@ Master in Artificial Intelligence and passionate about AI research and applicati
   <iconify-icon icon="line-md:my-location-loop" width="22" height="22"></iconify-icon> Location: Xalapa, Veracruz, Mexico
   <iconify-icon icon="line-md:email-opened-twotone-alt" width="24" height="24"></iconify-icon> <a href="mailto:hermosilladiaz@gmail.com">hermosilladiaz@gmail.com</a>
   <iconify-icon icon="line-md:github-twotone"></iconify-icon> <a href="https://github.com/JHermosillaD">JHermosillaD</a>
-  <iconify-icon icon="line-md:linkedin"></iconify-icon> <a href="www.linkedin.com/in/jesus-hermosilla">Jesus-hermosilla</a>
+  <iconify-icon icon="line-md:linkedin"></iconify-icon> <a href="https://www.linkedin.com/in/jesus-hermosilla">Jesus-hermosilla</a>
 </pre>
 
 ## Education
+
+<pre>
+2016-2021
+<b>B.Sc. Physics</b>
+Universidad Veracruzana
+Xalapa, Veracruz
+Mexico
+</pre>
+
 <pre>
 2021-2023
-<b>B.Sc. in Artificial Intelligence</b>
+<b>MSc. Artificial Intelligence</b>
 Universidad Veracruzana
 Xalapa, Veracruz
 Mexico
@@ -44,7 +53,7 @@ Mexico
 
 <pre>
 2023-Present
-<b>Ph.D. in Artificial Intelligence</b>
+<b>Ph.D. Artificial Intelligence</b>
 Universidad Veracruzana
 Xalapa, Veracruz
 Mexico
