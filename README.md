@@ -6,10 +6,3 @@ Personal website to record my resume, projects under development, and notes abou
 
 > [!WARNING]  
 > Working in progress
-
-References.
-- [Hugo](https://gohugo.io/getting-started/quick-start/) server
-- Hugo [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme
-- Hugo [PaperModX](https://github.com/reorx/hugo-PaperModX) theme
-- [Markmap](https://markmap.js.org/) a Markdown Mindmap visualization
-- Hugo shortcode to visualize a [Photo Gallery](https://github.com/liwenyip/hugo-easy-gallery/)
