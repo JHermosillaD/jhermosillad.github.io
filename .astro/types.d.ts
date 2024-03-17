@@ -200,8 +200,6 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
-"store": {
-};
 
 	};
 
