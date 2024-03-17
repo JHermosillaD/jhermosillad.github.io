@@ -1,8 +1,7 @@
 ---
 title: "Human Robot Interaction"
-description: "About the HRI field."
+description: "Lecture notes the history, key concepts and personal thoughts about human-robot interaction from a robotic perspective."
 pubDate: "Sep 11 2022"
-heroImage: "/post_img.webp"
 tags: ["robotics", "HRI"]
 ---
 

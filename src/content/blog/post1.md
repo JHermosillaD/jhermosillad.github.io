@@ -1,8 +1,7 @@
 ---
 title: "Acerca de los poemas"
-description: "Notas sobre la escritura de poesía."
+description: "Notes about spanish poetry, focusing on elemental concepts, phonetic structures and rhythm types."
 pubDate: "Sep 10 2022"
-heroImage: "/post_img.webp"
 tags: ["poetry", "spanish"]
 ---
 
@@ -12,28 +11,25 @@ El **ritmo** es la repetición periódica de fonemas específicos. La **cadencia
 
 ## Los versos
 
-Son el conjunto de palabras cuyo orden produce un efecto rítmico, y está determinado por la métrica y cadencia. La **rima** es la total o parcial identidad rítmica entre dos o más versos. Los versos se pueden clasificar por la cantidad de sílabas o el tipo de rima. <br>
+Son el conjunto de palabras cuyo orden produce un efecto rítmico, y está determinado por la métrica y cadencia. La **rima** es la total o parcial identidad rítmica entre dos o más versos. Los versos se pueden clasificar por la cantidad de sílabas o el tipo de rima. 
 
 Según sus sílabas, los versos más comunes en español son:
 - **Octosílabos** (8 sílabas)
 - **Endecasílabos** (11 sílabas)
 - **Alejandrinos** (14 sílabas)
-<br>
 
 Según su rima, los versos pueden ser:
-- **Consonantes**, donde la última palabra repite todo el sonido que se forma a partir de la última vocal con acento prosódico. <br>
-<p class="p2">
+- **Consonantes**, donde la última palabra repite todo el sonido que se forma a partir de la última vocal con acento prosódico. 
+
 barba/alba/escarba/caba <br>
 pálida/válida/escuálida/cálida <br>
 cielo/pelo/modelo/anzuelo
-</p>
 
-- **Asonantes**, donde la última palabra solo repite el sonido de las vocales que se forma a partir de la última vocal con acento prosódico. <br>
-<p class="p2">
+- **Asonantes**, donde la última palabra solo repite el sonido de las vocales que se forma a partir de la última vocal con acento prosódico. 
+
 rápido/mágico/tácito/ávido <br>
 mozo/desastroso/roto/asomo <br>
 ocaso/barco/tazo/marrano
-</p>
 
 ## Las estrofas
 
@@ -56,9 +52,6 @@ Existen estilos en tendencia, como:
 - El **enfático**, donde el número de sílabas de cada verso no es constante, pero la estrofa tiene un ritmo interno.
 
 - El **patrón métrico**, donde el número de sílabas de cada verso sigue un patrón regular.
-<br>
-<br>
-<br>
 
 ---
 ## Referencias
