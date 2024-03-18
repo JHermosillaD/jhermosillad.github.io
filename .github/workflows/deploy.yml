@@ -21,15 +21,15 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
+      - name: Install dependencies
+        run: npm i remark-math
+        run: npm i rehype-katex
 
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v2    
-#      - name: Setup pnpm
-#        uses: pnpm/action-setup@v3.0.0     
-#        version: 8.15.4 
+        uses: actions/checkout@v2
       - name: Install, build, and upload your site
         uses: withastro/action@v0
 
