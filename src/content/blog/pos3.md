@@ -3,10 +3,9 @@ title: "Latex demo"
 description: "About latex-markdown layout."
 pubDate: "March 15 2024"
 tags: ["demo", "latex"]
-layout: "/src/layouts/MarkdownLayout.astro"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. layout: "/src/layouts/MarkdownLayout.astro"
 
 $$
 \mathbb{N} = \{ a \in \mathbb{Z} : a > 0 \}
