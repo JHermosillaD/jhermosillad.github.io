@@ -23,7 +23,6 @@ jobs:
           version: 8
       - name: Install dependencies
         run: npm i remark-math
-        run: npm i rehype-katex
 
   build:
     runs-on: ubuntu-latest
