@@ -3,9 +3,10 @@ title: "Latex demo"
 description: "About latex-markdown layout."
 pubDate: "March 15 2024"
 tags: ["demo", "latex"]
+layout: "/src/layouts/MarkdownLayout.astro"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. layout: "/src/layouts/MarkdownLayout.astro"
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
