@@ -153,7 +153,7 @@ install(DIRECTORY worlds
 )
 ```
 
-Check out my repo for an example implementation:
+Check out my [repo](https://github.com/RookieRobotics/kitchen_lab "Kitchen lab!") for an example implementation:
 
 <p align="center">
 <img src="https://github.com/JHermosillaD/kitchen_lab/blob/main/media/demo1.gif?raw=true">
