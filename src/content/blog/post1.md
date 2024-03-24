@@ -1,8 +1,8 @@
 ---
 title: "Acerca de los poemas"
 description: "Notes about spanish poetry, focusing on elemental concepts, phonetic structures and rhythm types."
-pubDate: "Sep 10 2022"
-tags: ["poetry", "spanish"]
+pubDate: "October 10 2023"
+tags: ["lecture","poetry", "spanish"]
 ---
 
 La **poesía** es una manifestación artística de las palabras, organizadas en verso o en prosa. Un **poema** es una obra literaria organizada en verso.

@@ -1,7 +1,7 @@
 ---
 title: "Latex demo"
 description: "About latex-markdown layout."
-pubDate: "March 15 2024"
+pubDate: "January 15 2024"
 tags: ["demo", "latex"]
 layout: "/src/layouts/MarkdownLayout.astro"
 ---

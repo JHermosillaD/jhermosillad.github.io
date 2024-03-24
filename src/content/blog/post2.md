@@ -1,8 +1,8 @@
 ---
 title: "Human Robot Interaction"
 description: "Lecture notes the history, key concepts and personal thoughts about human-robot interaction from a robotic perspective."
-pubDate: "Sep 11 2022"
-tags: ["robotics", "HRI"]
+pubDate: "November 12 2023"
+tags: ["lecture","robotics", "HRI"]
 ---
 
 <p align="justify"> 
