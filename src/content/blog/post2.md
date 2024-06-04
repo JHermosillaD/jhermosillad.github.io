@@ -1,6 +1,6 @@
 ---
 title: "Human Robot Interaction"
-description: "Lecture notes the history, key concepts and personal thoughts about human-robot interaction from a robotic perspective."
+description: "Lecture notes on the history, key concepts and personal thoughts about human-robot interaction from a robotic perspective."
 pubDate: "November 12 2023"
 tags: ["lecture","robotics", "HRI"]
 ---
