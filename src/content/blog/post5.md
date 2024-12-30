@@ -99,22 +99,7 @@ Estos elementos integran un proceso iterativo de adaptación.
 ### Algoritmos genéticos
 
 <p align="justify"> 
-Para emplear dicho paradigma se debe escoger una representación de soluciones, ya sea del tipo binaria, entera, real o mediante permutaciones. Después de generar la población según la representación correspondiente, se dene realizar la selección de padres. Una forma de clasificar dichas soluciones son las técnicas de selección proporcionales y mediante torneos. 
-
-## ToDo: Describir cada técnica de selección
-- La ruleta: fue propuesta por DeJon (1975)
-- Sobre estocástico
-- Selección universal estocástica
-- Muestreo determinístico
-- Torneo
-
-Adicionalmente, existen formas alternativas de estimar el valor esperado, con el fin de reducir la convergencia prematura de la solución, estos son:
-
-- Escalamiento sigma
-- Jerarquías lineales
-- Selección de Boltzman
-
-Después, se debe seleccionar uno de los siguientes operadores de mutación.
+Para emplear dicho paradigma se debe escoger una representación de soluciones, ya sea del tipo binaria, entera, real o mediante permutaciones. Después, se debe seleccionar uno de los siguientes operadores de mutación.
 </p>
  
 - <b>Mutación simple:</b> se altera un bit (flip) de información.
@@ -134,5 +119,3 @@ Además, se debe seleccionar un operador de cruza, para ello se denomina punto d
 - <b>Cruza aritmética simple:</b> se aplica la ecuación de cruza anterior, se selecciona un punto de cruza y se calcula el coeficiente a en función de los límites de las variables.
 
 - <b>Cruza aritmética completa:</b> se aplica la cruza aritmética simple todos los genes del cromosoma.
-
-Finalmente, se aplica un proceso de remplazo.
