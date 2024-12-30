@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: package.json
       - name: Install remark-math
         run: npm i remark-math
       - name: Install rehype-katex
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.6
       - name: Install, build, and upload your site
         uses: withastro/action@v0
 
