@@ -36,6 +36,8 @@ jobs:
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3.0.0
+        with:
+          version: 8
 
   deploy:
     needs: build
