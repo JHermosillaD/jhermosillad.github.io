@@ -15,12 +15,25 @@ permissions:
   id-token: write
 
 jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install remark-math
+        run: npm i remark-math
+      - name: Install rehype-katex
+        run: npm i rehype-katex
 
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3.0.0
 
