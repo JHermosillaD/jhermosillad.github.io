@@ -15,13 +15,6 @@ permissions:
   id-token: write
 
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install remark-math
-        run: npm i remark-math
-      - name: Install rehype-katex
-        run: npm i rehype-katex
 
   build:
     runs-on: ubuntu-latest
