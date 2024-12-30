@@ -18,9 +18,6 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
       - name: Install remark-math
         run: npm i remark-math
       - name: Install rehype-katex
