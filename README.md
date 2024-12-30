@@ -4,5 +4,11 @@
 
 Personal website to record my resume, projects under development, and notes about the knowledge I'm acquiring along the way. The site is based on the [Astrofy](https://github.com/manuelernestog/astrofy) template for static server development with some modifications that I have found useful.
 
+Resources:
+
+- [Astro Deploy Action](https://github.com/marketplace/actions/astro-deploy)
+- [Astro GitHub Page Settings](https://docs.astro.build/en/guides/deploy/github/)
+
 > [!WARNING]  
 > Working in progress
+
