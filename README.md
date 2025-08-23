@@ -8,6 +8,7 @@ Resources:
 
 - [Astro Deploy Action](https://github.com/marketplace/actions/astro-deploy)
 - [Astro GitHub Page Settings](https://docs.astro.build/en/guides/deploy/github/)
+- [Iconify gallery](https://icon-sets.iconify.design/)
 
 > [!WARNING]  
 > Working in progress
