@@ -1,46 +1,158 @@
 ---
+// Import necessary components and utilities
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 import { Image } from "astro:assets";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+// Fetch and sort blog posts by publication date (newest first)
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
+// Get the 3 most recent posts for display
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="w-fit mx-auto mt-5 mb-6">
+  <!-- Profile Section -->
+  <div class="w-fit mx-auto mt-8 mb-10">
     <a href="/">
-      <div class="avatar transition ease-in-out block m-auto">
-        <div class="w-[24rem]">
-          <Image class="mask mask-circle" format="png" width={300} height={300} src="/profile.png" alt="Profile" />
+      <div class="avatar transition-all duration-300 ease-in-out hover:scale-105 block m-auto">
+        <div class="w-[30rem]">
+          <Image 
+            class="mask mask-circle shadow-xl" 
+            format="png" 
+            width={300} 
+            height={300} 
+            src="/profile.png" 
+            alt="Jesús Eduardo Hermosilla Díaz - Profile Picture" 
+          />
         </div>
       </div>
     </a>
   </div>
-  <div class="pb-12 mt-5">
-    <div class="text-2xl" style="text-align:center">
-      <p> Hola! &#128075; I'm <b>Jesús Eduardo Hermosilla Díaz </b>, a physicist pursuing an artificial intelligence Ph.D. in Mexico. Here, I keep a record of my academic odyssey.
+
+  <!-- Introduction Section -->
+  <section class="pb-16 mt-8">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h1 class="text-3xl md:text-4xl font-light leading-relaxed text-base-content">
+        ¡Hola! &#128075; I'm         <span class="font-bold text-primary">Jesús Eduardo Hermosilla Díaz</span>
+      </h1>
+      <p class="text-xl md:text-2xl mt-6 leading-relaxed text-base-content/80">
+        A physicist pursuing a Ph.D. in Artificial Intelligence in Mexico. 
+        <br class="hidden md:block">
+        This space is where I document my academic journey.
       </p>
     </div>
-  </div>
+  </section>
 
-<div class="chat chat-start">
-  <div class="chat-image avatar">
-    <div class="w-10 rounded-full">
-      <img alt="Chatting.." src="/profile.png" />
+  <!-- Interactive Chat Bubble Section -->
+  <section class="mb-12">
+    <div class="chat chat-start">
+      <div class="chat-image avatar">
+        <div class="w-10 rounded-full">
+          <img 
+            alt="Jesús Hermosilla" 
+            src="/me.png"
+          />
+        </div>
+      </div>
+      <div class="chat-header">
+        Jesús Hermosilla
+        <time class="text-xs opacity-50">1 minute ago</time>
+      </div>
+      <div class="chat-bubble bg-primary text-primary-content">
+        Check out my latest projects!
+      </div>
+      <div class="chat-footer opacity-50">
+        Delivered
+      </div>
     </div>
-  </div>
-  <div class="chat-header">
-    Jesús Hermosilla
-    <time class="text-xs opacity-50">1 minute ago</time>
-  </div>
-  <div class="chat-bubble">Check out my latest projects!</div>
-  <div class="chat-footer opacity-50">
-    Delivered
-  </div>
-</div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider my-12"></div>
+
+  <!-- Work Gallery Section -->
+  <section class="mb-12">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-base-content mb-4">
+        Behind the Scenes
+      </h2>
+    </div>
+
+    <!-- Carousel Component -->
+    <div class="carousel w-full rounded-xl shadow-lg overflow-hidden bg-base-250">
+      <div id="item1" class="carousel-item w-full flex justify-center items-center">
+        <img 
+          src="/working/img1.png" 
+          class="max-w-full max-h-96 object-contain" 
+          alt="Research workspace - Image 1"
+          loading="lazy"
+        />
+      </div>
+      <div id="item2" class="carousel-item w-full flex justify-center items-center">
+        <img 
+          src="/working/img2.png" 
+          class="max-w-full max-h-96 object-contain" 
+          alt="Research workspace - Image 2"
+          loading="lazy"
+        />
+      </div>
+      <div id="item3" class="carousel-item w-full flex justify-center items-center">
+        <img 
+          src="/working/img3.png" 
+          class="max-w-full max-h-96 object-contain" 
+          alt="Research workspace - Image 3"
+          loading="lazy"
+        />
+      </div>
+      <div id="item4" class="carousel-item w-full flex justify-center items-center">
+        <img 
+          src="/working/img4.png" 
+          class="max-w-full max-h-96 object-contain" 
+          alt="Research workspace - Image 4"
+          loading="lazy"
+        />
+      </div>
+      <div id="item6" class="carousel-item w-full flex justify-center items-center">
+        <img 
+          src="/working/img6.png" 
+          class="max-w-full max-h-96 object-contain" 
+          alt="Research workspace - Image 6"
+          loading="lazy"
+        />
+      </div>
+      <div id="item7" class="carousel-item w-full flex justify-center items-center">
+        <img 
+          src="/working/img7.png" 
+          class="max-w-full max-h-96 object-contain" 
+          alt="Research workspace - Image 7"
+          loading="lazy"
+        />
+      </div>
+      <div id="item8" class="carousel-item w-full flex justify-center items-center">
+        <img 
+          src="/working/img8.png" 
+          class="max-w-full max-h-96 object-contain" 
+          alt="Research workspace - Image 8"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Carousel Navigation -->
+    <div class="flex w-full justify-center gap-3 py-6">
+      <a href="#item1" class="btn btn-sm btn-circle btn-outline hover:btn-primary">1</a>
+      <a href="#item2" class="btn btn-sm btn-circle btn-outline hover:btn-primary">2</a>
+      <a href="#item3" class="btn btn-sm btn-circle btn-outline hover:btn-primary">3</a>
+      <a href="#item4" class="btn btn-sm btn-circle btn-outline hover:btn-primary">4</a>
+      <a href="#item6" class="btn btn-sm btn-circle btn-outline hover:btn-primary">5</a>
+      <a href="#item7" class="btn btn-sm btn-circle btn-outline hover:btn-primary">6</a>
+      <a href="#item8" class="btn btn-sm btn-circle btn-outline hover:btn-primary">7</a>
+    </div>
+  </section>
 
 </BaseLayout>
