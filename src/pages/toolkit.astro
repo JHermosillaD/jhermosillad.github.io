@@ -3,65 +3,96 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 // 1. Your Database
 const resources = [
+  // Education
   {
-    title: "SocNavBench",
-    desc: "A benchmark for social navigation in robotics.",
+    title: "Robot Academy",
+    desc: "The open online robotics education resource.",
+    type: "Education",
+    tags: ["Courses"],
+    url: "https://robotacademy.net.au/"
+  },
+  {
+    title: "Human-Robot Interaction",
+    desc: "Virtual home of the Human-Robot Interaction - An Introduction textbook.",
+    type: "Education",
+    tags: ["Book"],
+    url: "https://www.human-robot-interaction.org/"
+  },
+  {
+    title: "Finding the Perfect Scale",
+    desc: "A primer to evaluate existing scales in Human-Robot Interaction.",
+    type: "Education",
+    tags: ["Guideline"],
+    url: "https://hriscaledatabase.psychology.gmu.edu/"
+  },
+  // Datasets
+  {
+    title: "RGB-D indoor",
+    desc: "A benchmark for the evaluation of Navigation Assistance for the Visually Impaired.",
     type: "Datasets",
-    tags: ["Python", "Benchmark"],
-    url: "#"
+    tags: ["Rosbag"],
+    url: "http://webdiis.unizar.es/~glopez/dataset.html"
   },
   {
-    title: "ETH Pedestrians",
-    desc: "The classic dataset for pedestrian trajectory prediction.",
+    title: "JPL First-Person Interaction",
+    desc: "Human activity videos taken from a first-person viewpoint.",
     type: "Datasets",
-    tags: ["CSV", "Real World"],
-    url: "#"
+    tags: ["Video"],
+    url: "http://michaelryoo.com/jpl-interaction.html"
   },
   {
-    title: "ROS 2 Humble",
-    desc: "The standard middleware for robotics.",
+    title: "PISC",
+    desc: "The People in Social Context (PISC) dataset focuses on social relationships.",
+    type: "Datasets",
+    tags: ["Image"],
+    url: "https://zenodo.org/records/1059155"
+  },
+  {
+    title: "NavWareSet",
+    desc: "A Dataset of Socially Compliant and Non-Compliant Robot Navigation.",
+    type: "Datasets",
+    tags: ["Rosbag"],
+    url: "https://anr-navware.github.io/navwareset/"
+  },
+  // Frameworks
+  {
+    title: "PIC4",
+    desc: "Set of ROS2 packages to train deep reinforcement learning for autonomous navigation.",
     type: "Frameworks",
-    tags: ["C++", "LTS"],
-    url: "#"
+    tags: ["ROS", "RL"],
+    url: "https://github.com/PIC4SeR/PIC4rl_gym"
   },
   {
-    title: "Gazebo Harmonic",
-    desc: "Next-gen simulation with improved physics engines.",
-    type: "Simulators",
-    tags: ["Sim", "Physics"],
-    url: "#"
-  },
-  {
-    title: "Webots",
-    desc: "Open source robot simulator, great for rapid prototyping.",
-    type: "Simulators",
-    tags: ["Sim", "Open Source"],
-    url: "#"
-  },
-  {
-    title: "Isaac Sim",
-    desc: "Photorealistic simulation powered by NVIDIA Omniverse.",
-    type: "Simulators",
-    tags: ["NVIDIA", "Ray Tracing"],
-    url: "#"
-  },
-  {
-    title: "MoveIt 2",
-    desc: "Motion planning framework for manipulation.",
+    title: "ROS",
+    desc: "The standard middleware (Robot Operating System) for robotics.",
     type: "Frameworks",
-    tags: ["Motion Planning", "C++"],
-    url: "#"
+    tags: ["ROS"],
+    url: "https://www.ros.org/"
   },
   {
     title: "Nav2",
     desc: "Professional navigation stack for ROS 2.",
     type: "Frameworks",
-    tags: ["Navigation", "SLAM"],
-    url: "#"
-  }
+    tags: ["Navigation"],
+    url: "https://docs.nav2.org/"
+  },
+  // Simulators
+  {
+    title: "Gazebo",
+    desc: "Environment simulation with physics engines.",
+    type: "Simulators",
+    tags: ["Sim"],
+    url: "https://gazebosim.org/home"
+  },
+  {
+    title: "Isaac Sim",
+    desc: "Photorealistic simulation powered by NVIDIA.",
+    type: "Simulators",
+    tags: ["Sim"],
+    url: "https://developer.nvidia.com/isaac/sim"
+  },
 ];
 
-// 2. Grouping Logic
 const groupedResources = resources.reduce((acc, item) => {
   if (!acc[item.type]) acc[item.type] = [];
   acc[item.type].push(item);
@@ -69,64 +100,146 @@ const groupedResources = resources.reduce((acc, item) => {
 }, {});
 
 const categories = Object.keys(groupedResources);
+
+const categoryIcons = {
+  "Education": `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>`,
+  "Datasets": `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`,
+  "Frameworks": `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
+  "Simulators": `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>`
+};
 ---
 
 <BaseLayout title="Robotics Toolbox" sideBarActiveItemID="resources" maxWidth="max-w-7xl">
 
-  <div class="mb-6 border-b border-base-300 pb-2">
-    <h1 class="text-4xl font-bold text-primary">The Robotics Toolbox</h1>
+  <div class="mb-10 flex flex-col md:flex-row justify-between items-end gap-4">
+    <div>
+      <h1 class="text-4xl font-bold text-primary">The Robotics Toolbox</h1>
+      <p class="text-lg opacity-70 mt-2">Curated datasets, simulators, and libraries for HRI research.</p>
+    </div>
+    
+    <a 
+      href="https://github.com/JHermosillaD/jhermosillad.github.io/issues/new?title=New+Resource+Suggestion&labels=enhancement" 
+      target="_blank"
+      class="btn btn-outline btn-sm"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      Suggest Resource
+    </a>
   </div>
 
-  <div class="text-justify leading-relaxed text-lg text-base-content/90 mb-8">
-    <p>
-      An awesome set of curated datasets, simulators, and libraries for robotics research.
-      </p>
+  <div class="form-control mb-8">
+    <div class="relative w-full">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </div>
+      <input 
+        type="text" 
+        id="resource-search" 
+        placeholder="Filter resources (e.g., 'ROS', 'Dataset')..." 
+        class="input input-bordered w-full pl-10 bg-base-100 shadow-sm focus:shadow-md transition-shadow"
+      />
+    </div>
   </div>
 
-  <div class="space-y-8">
-    {categories.map((category) => (
-      <div>
+  <div class="join join-vertical w-full border border-base-300 rounded-xl bg-base-100 shadow-sm" id="accordion-container">
+    
+    {categories.map((category, index) => (
+      <div class="collapse collapse-arrow join-item border-b border-base-300 last:border-none group category-section">
         
-        <div class="flex items-center gap-2 mb-3 pb-1 border-b border-base-200">
-          <h2 class="text-lg font-bold uppercase tracking-wider opacity-80">{category}</h2>
-          <span class="text-xs font-mono opacity-40">({groupedResources[category].length})</span>
+        <input type="checkbox" name="my-accordion-4" checked={index === 0 ? "checked" : undefined} /> 
+        
+        <div class="collapse-title text-xl font-medium flex items-center gap-4 py-5 hover:bg-base-200/50 transition-colors">
+          <div class="p-2 bg-primary/10 rounded-lg text-primary" set:html={categoryIcons[category] || ''} />
+          <span class="category-title">{category}</span>
+          <span class="badge badge-sm badge-ghost ml-auto opacity-70">{groupedResources[category].length}</span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-          {groupedResources[category].map((item) => (
-            <a 
-              href={item.url} 
-              target="_blank" 
-              class="card bg-base-100 border border-base-300 hover:border-primary hover:shadow-sm transition-all duration-200 group"
-            >
-              <div class="card-body p-4 block">
-                
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-bold text-base group-hover:text-primary transition-colors leading-tight truncate pr-2">
-                    {item.title}
-                  </h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-20 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-                </div>
-                
-                <p class="text-xs text-base-content/70 leading-snug mb-3 line-clamp-2 min-h-[2.5em]">
-                  {item.desc}
-                </p>
+        <div class="collapse-content bg-base-200/30">
+          <div class="pt-6 pb-2">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+              {groupedResources[category].map((item) => (
+                <a 
+                  href={item.url} 
+                  target="_blank" 
+                  class="resource-card card bg-base-100 border border-base-200 hover:border-primary hover:shadow-md transition-all duration-200 h-full"
+                  data-search={`${item.title} ${item.desc} ${item.tags.join(' ')}`.toLowerCase()}
+                >
+                  <div class="card-body p-4 block h-full">
+                    
+                    <div class="flex justify-between items-start mb-1">
+                      <h3 class="font-bold text-base group-hover:text-primary transition-colors leading-tight truncate pr-2">
+                        {item.title}
+                      </h3>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-20 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                    </div>
+                    
+                    <p class="text-xs text-base-content/70 leading-snug mb-3 line-clamp-2">
+                      {item.desc}
+                    </p>
 
-                <div class="flex flex-wrap gap-1">
-                  {item.tags.map((tag) => (
-                    <span class="badge badge-xs badge-neutral border-base-content/10 bg-base-200 text-[10px] font-normal text-base-content/60 px-2">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                    <div class="flex flex-wrap gap-1 mt-auto">
+                      {item.tags.map((tag) => (
+                        <span class="badge badge-xs badge-neutral border-base-content/5 bg-base-200 text-[10px] font-normal text-base-content/60 px-2">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
 
-              </div>
-            </a>
-          ))}
+                  </div>
+                </a>
+              ))}
+            </div>
+
+          </div>
         </div>
-
       </div>
     ))}
+
+  </div>
+
+  <div id="no-results" class="hidden text-center py-10 opacity-50">
+    <p class="text-lg font-bold">No matching resources found.</p>
   </div>
 
 </BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('resource-search');
+  const sections = document.querySelectorAll('.category-section');
+  const noResults = document.getElementById('no-results');
+
+  searchInput?.addEventListener('input', (e) => {
+    const term = (e.target as HTMLInputElement).value.toLowerCase();
+    let totalResults = 0;
+
+    sections.forEach((section) => {
+      const checkbox = section.querySelector('input[type="checkbox"]') as HTMLInputElement;
+      const cards = section.querySelectorAll('.resource-card');
+      let sectionHasMatch = false;
+
+      cards.forEach((card) => {
+        const data = card.getAttribute('data-search') || '';
+        if (data.includes(term)) {
+          card.classList.remove('hidden');
+          sectionHasMatch = true;
+          totalResults++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (sectionHasMatch) {
+        section.classList.remove('hidden');
+        if (term.length > 0) checkbox.checked = true;
+      } else {
+        section.classList.add('hidden');
+      }
+    });
+
+    if (noResults) {
+      if (totalResults === 0) noResults.classList.remove('hidden');
+      else noResults.classList.add('hidden');
+    }
+  });
+</script>
