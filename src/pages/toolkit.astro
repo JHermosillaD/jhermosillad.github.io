@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// 1. Your Database
+const resources = [
+  {
+    title: "SocNavBench",
+    desc: "A benchmark for social navigation in robotics.",
+    type: "Datasets",
+    tags: ["Python", "Benchmark"],
+    url: "#"
+  },
+  {
+    title: "ETH Pedestrians",
+    desc: "The classic dataset for pedestrian trajectory prediction.",
+    type: "Datasets",
+    tags: ["CSV", "Real World"],
+    url: "#"
+  },
+  {
+    title: "ROS 2 Humble",
+    desc: "The standard middleware for robotics.",
+    type: "Frameworks",
+    tags: ["C++", "LTS"],
+    url: "#"
+  },
+  {
+    title: "Gazebo Harmonic",
+    desc: "Next-gen simulation with improved physics engines.",
+    type: "Simulators",
+    tags: ["Sim", "Physics"],
+    url: "#"
+  },
+  {
+    title: "Webots",
+    desc: "Open source robot simulator, great for rapid prototyping.",
+    type: "Simulators",
+    tags: ["Sim", "Open Source"],
+    url: "#"
+  },
+  {
+    title: "Isaac Sim",
+    desc: "Photorealistic simulation powered by NVIDIA Omniverse.",
+    type: "Simulators",
+    tags: ["NVIDIA", "Ray Tracing"],
+    url: "#"
+  },
+  {
+    title: "MoveIt 2",
+    desc: "Motion planning framework for manipulation.",
+    type: "Frameworks",
+    tags: ["Motion Planning", "C++"],
+    url: "#"
+  },
+  {
+    title: "Nav2",
+    desc: "Professional navigation stack for ROS 2.",
+    type: "Frameworks",
+    tags: ["Navigation", "SLAM"],
+    url: "#"
+  }
+];
+
+// 2. Grouping Logic
+const groupedResources = resources.reduce((acc, item) => {
+  if (!acc[item.type]) acc[item.type] = [];
+  acc[item.type].push(item);
+  return acc;
+}, {});
+
+const categories = Object.keys(groupedResources);
+---
+
+<BaseLayout title="Robotics Toolbox" sideBarActiveItemID="resources" maxWidth="max-w-7xl">
+
+  <div class="mb-6 border-b border-base-300 pb-2">
+    <h1 class="text-4xl font-bold text-primary">The Robotics Toolbox</h1>
+  </div>
+
+  <div class="text-justify leading-relaxed text-lg text-base-content/90 mb-8">
+    <p>
+      An awesome set of curated datasets, simulators, and libraries for robotics research.
+      </p>
+  </div>
+
+  <div class="space-y-8">
+    {categories.map((category) => (
+      <div>
+        
+        <div class="flex items-center gap-2 mb-3 pb-1 border-b border-base-200">
+          <h2 class="text-lg font-bold uppercase tracking-wider opacity-80">{category}</h2>
+          <span class="text-xs font-mono opacity-40">({groupedResources[category].length})</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          {groupedResources[category].map((item) => (
+            <a 
+              href={item.url} 
+              target="_blank" 
+              class="card bg-base-100 border border-base-300 hover:border-primary hover:shadow-sm transition-all duration-200 group"
+            >
+              <div class="card-body p-4 block">
+                
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-bold text-base group-hover:text-primary transition-colors leading-tight truncate pr-2">
+                    {item.title}
+                  </h3>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-20 group-hover:opacity-100 transition-opacity flex-shrink-0"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                </div>
+                
+                <p class="text-xs text-base-content/70 leading-snug mb-3 line-clamp-2 min-h-[2.5em]">
+                  {item.desc}
+                </p>
+
+                <div class="flex flex-wrap gap-1">
+                  {item.tags.map((tag) => (
+                    <span class="badge badge-xs badge-neutral border-base-content/10 bg-base-200 text-[10px] font-normal text-base-content/60 px-2">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+              </div>
+            </a>
+          ))}
+        </div>
+
+      </div>
+    ))}
+  </div>
+
+</BaseLayout>

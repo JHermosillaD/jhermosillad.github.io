@@ -14,8 +14,14 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout title="Notes" sideBarActiveItemID="blog">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Notes</div>
+  <div class="mb-6 border-b border-base-300 pb-2">
+    <h1 class="text-4xl font-bold text-primary">Notes</h1>
+  </div>
+
+  <div class="text-justify leading-relaxed text-lg text-base-content/90 mb-8">
+    <p>
+      Lecture notes, tutorials, or anything I write to remember or sketch out ideas.
+      </p>
   </div>
 
   {
