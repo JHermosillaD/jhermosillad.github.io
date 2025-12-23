@@ -50,9 +50,13 @@ const pastEvents = sortedEvents.filter(e => parseEventDate(e.data.date) < now).r
               <tr class="hover">
                 <td>
                   <div class="font-bold text-lg text-primary">{event.data.title}</div>
-                  <div class="text-xs opacity-70">{event.data.subtitle}</div>
+                  <div class="text-base opacity-70">{event.data.subtitle}</div>
                 </td>
-                <td class="font-medium whitespace-nowrap">{event.data.date}</td>
+                <td>
+                  <div class="flex items-center gap-2">
+                    <span>{event.data.date}</span>
+                  </div>
+                </td>
                 <td>
                   <div class="flex items-center gap-2">
                     <span>{event.data.location}</span>
@@ -104,7 +108,7 @@ const pastEvents = sortedEvents.filter(e => parseEventDate(e.data.date) < now).r
             <tbody>
               {pastEvents.map((event) => (
                 <tr>
-                  <td class="font-bold">{event.data.title}</td>
+                  <td>{event.data.title}</td>
                   <td>{event.data.date}</td>
                   <td>{event.data.location}</td>
                 </tr>
@@ -126,7 +130,7 @@ const pastEvents = sortedEvents.filter(e => parseEventDate(e.data.date) < now).r
     <div class="card bg-base-200 shadow-xl border border-base-300">
       <div class="card-body p-8">
         <div class="form-control">
-          <label class="label"><span class="label-text font-bold">Acronym</span></label>
+          <label class="label"><span class="label-text">Acronym</span></label>
           <input type="text" id="input-title" class="input input-bordered w-full" placeholder="e.g. CVPR 2026" />
         </div>
         <div class="form-control mt-2">
@@ -157,7 +161,7 @@ const pastEvents = sortedEvents.filter(e => parseEventDate(e.data.date) < now).r
         </div>
 
         <div class="form-control mt-4">
-          <label class="label"><span class="label-text font-bold">Indexed In:</span></label>
+          <label class="label"><span class="label-text">Indexed In:</span></label>
           <div class="flex flex-wrap gap-2">
             {["Scopus", "IEEE", "ACM", "WoS", "DBLP"].map((idx) => (
               <label class="cursor-pointer label border border-base-content/20 rounded-lg px-3 py-1 bg-base-100 hover:bg-base-200 transition">
