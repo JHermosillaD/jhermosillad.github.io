@@ -2,24 +2,30 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-// Fetch and sort events by date
 const events = (await getCollection("events")).sort((a, b) => {
   return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
 });
 ---
 
-<BaseLayout title="Conferences" sideBarActiveItemID="events" maxWidth="max-w-7xl">
+<BaseLayout
+  title="Conferences"
+  sideBarActiveItemID="events"
+  maxWidth="max-w-7xl"
+>
   <div class="mb-6 border-b border-base-300 pb-2">
     <h1 class="text-4xl font-bold text-primary">Conference Tracker</h1>
   </div>
 
   <div class="text-justify leading-relaxed text-lg text-base-content/90 mb-8">
     <p>
-        Relevant conferences on Artificial Intelligence and Robotics to attend or publish full papers during 2025.
+      Relevant conferences on Artificial Intelligence and Robotics to attend or
+      publish full papers during 2025.
     </p>
   </div>
 
-  <div class="overflow-x-auto w-full bg-base-100 rounded-xl shadow-md border border-base-200 mb-10">
+  <div
+    class="overflow-x-auto w-full bg-base-100 rounded-xl shadow-md border border-base-200 mb-10"
+  >
     <table class="table table-zebra w-full">
       <thead class="bg-base-200 text-base-content">
         <tr>
@@ -32,127 +38,220 @@ const events = (await getCollection("events")).sort((a, b) => {
         </tr>
       </thead>
       <tbody>
-        {events.map((event) => (
-          <tr class="hover">
-            <td>
-              <div class="font-bold text-lg text-primary">{event.data.title}</div>
-              <div class="text-xs opacity-70">{event.data.subtitle}</div>
-            </td>
-            <td class="font-medium">{event.data.date}</td>
-            <td>
-              <div class="flex items-center gap-2">
-                <span>{event.data.location}</span>
-              </div>
-            </td>
-            <td>
-              <div class="flex gap-1">
-                {event.data.index.map((idx) => (
-                  <span class="badge badge-sm badge-outline">{idx}</span>
-                ))}
-              </div>
-            </td>
-            <td>
-               <span class={event.data.deadline.includes("2024") ? "text-error font-bold" : "font-bold opacity-70"}>
-                 {event.data.deadline}
-               </span>
-            </td>
-            <td class="text-center">
-              <a href={event.data.website} target="_blank" class="btn btn-sm btn-ghost border-base-300">
-                Link
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </td>
-          </tr>
-        ))}
+        {
+          events.map((event) => (
+            <tr class="hover">
+              <td>
+                <div class="font-bold text-lg text-primary">
+                  {event.data.title}
+                </div>
+                <div class="text-xs opacity-70">{event.data.subtitle}</div>
+              </td>
+              <td class="font-medium">{event.data.date}</td>
+              <td>
+                <div class="flex items-center gap-2">
+                  <span>{event.data.location}</span>
+                </div>
+              </td>
+              <td>
+                <div class="flex gap-1">
+                  {event.data.index.map((idx) => (
+                    <span class="badge badge-sm badge-outline">{idx}</span>
+                  ))}
+                </div>
+              </td>
+              <td>
+                <span
+                  class={
+                    event.data.deadline.includes("2024")
+                      ? "text-error font-bold"
+                      : "font-bold opacity-70"
+                  }
+                >
+                  {event.data.deadline}
+                </span>
+              </td>
+              <td class="text-center">
+                <a
+                  href={event.data.website}
+                  target="_blank"
+                  class="btn btn-sm btn-ghost border-base-300"
+                >
+                  Link
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </>
+                  </svg>
+                </a>
+              </td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   </div>
 
-  <div class="divider my-12 text-primary font-bold opacity-50">ADMIN AREA</div>
+  <div class="divider my-12 opacity-50"></div>
 
   <div class="max-w-3xl mx-auto mb-20">
     <div class="mb-4 text-center">
-      <h2 class="text-2xl font-bold">Add New Conference</h2>
-      <p class="opacity-70 text-sm">Fill the details below to generate a new YAML config file.</p>
+      <h2 class="text-2xl font-bold">Add New</h2>
     </div>
 
     <div class="card bg-base-200 shadow-xl border border-base-300">
       <div class="card-body p-8">
-        
         <div class="form-control">
-          <label class="label"><span class="label-text font-bold">Acronym</span></label>
-          <input type="text" id="input-title" class="input input-bordered w-full" placeholder="e.g. CVPR 2025" />
+          <label class="label"
+            ><span class="label-text font-bold">Acronym</span></label
+          >
+          <input
+            type="text"
+            id="input-title"
+            class="input input-bordered w-full"
+            placeholder="e.g. CVPR 2025"
+          />
         </div>
         <div class="form-control mt-2">
           <label class="label"><span class="label-text">Full Name</span></label>
-          <input type="text" id="input-subtitle" class="input input-bordered w-full" placeholder="Computer Vision and Pattern Recognition" />
+          <input
+            type="text"
+            id="input-subtitle"
+            class="input input-bordered w-full"
+            placeholder="Computer Vision and Pattern Recognition"
+          />
         </div>
 
         <div class="flex flex-col md:flex-row gap-4 mt-2">
           <div class="form-control w-full md:w-1/2">
             <label class="label"><span class="label-text">Date</span></label>
-            <input type="text" id="input-date" class="input input-bordered w-full" placeholder="June 17-21" />
+            <input
+              type="text"
+              id="input-date"
+              class="input input-bordered w-full"
+              placeholder="June 17-21"
+            />
           </div>
           <div class="form-control w-full md:w-1/2">
-            <label class="label"><span class="label-text">Location</span></label>
-            <input type="text" id="input-location" class="input input-bordered w-full" placeholder="Seattle, USA" />
+            <label class="label"><span class="label-text">Location</span></label
+            >
+            <input
+              type="text"
+              id="input-location"
+              class="input input-bordered w-full"
+              placeholder="Seattle, USA"
+            />
           </div>
         </div>
 
         <div class="flex flex-col md:flex-row gap-4 mt-2">
-           <div class="form-control w-full md:w-1/2">
-            <label class="label"><span class="label-text text-error">Deadline</span></label>
-            <input type="text" id="input-deadline" class="input input-bordered w-full" placeholder="Nov 15, 2024" />
+          <div class="form-control w-full md:w-1/2">
+            <label class="label"><span class="label-text">Deadline</span></label
+            >
+            <input
+              type="text"
+              id="input-deadline"
+              class="input input-bordered w-full"
+              placeholder="Nov 15, 2025"
+            />
           </div>
           <div class="form-control w-full md:w-1/2">
             <label class="label"><span class="label-text">Website</span></label>
-            <input type="url" id="input-website" class="input input-bordered w-full" placeholder="https://..." />
+            <input
+              type="url"
+              id="input-website"
+              class="input input-bordered w-full"
+              placeholder="https://..."
+            />
           </div>
         </div>
 
         <div class="form-control mt-4">
-          <label class="label"><span class="label-text font-bold">Indexed In:</span></label>
+          <label class="label"
+            ><span class="label-text font-bold">Indexed In:</span></label
+          >
           <div class="flex flex-wrap gap-2">
-            {["Scopus", "IEEE", "ACM", "WoS", "DBLP"].map((idx) => (
-              <label class="cursor-pointer label border border-base-content/20 rounded-lg px-3 py-1 bg-base-100 hover:bg-base-200 transition">
-                <span class="label-text mr-2 text-xs font-bold">{idx}</span>
-                <input type="checkbox" value={idx} class="checkbox checkbox-xs checkbox-primary idx-check" checked={idx==="Scopus"} />
-              </label>
-            ))}
+            {
+              ["Scopus", "IEEE", "ACM", "WoS", "DBLP"].map((idx) => (
+                <label class="cursor-pointer label border border-base-content/20 rounded-lg px-3 py-1 bg-base-100 hover:bg-base-200 transition">
+                  <span class="label-text mr-2 text-xs font-bold">{idx}</span>
+                  <input
+                    type="checkbox"
+                    value={idx}
+                    class="checkbox checkbox-xs checkbox-primary idx-check"
+                    checked={idx === "Scopus"}
+                  />
+                </label>
+              ))
+            }
           </div>
         </div>
 
-        <div class="card-actions justify-end mt-8 border-t border-base-content/10 pt-6">
-            <button class="btn btn-ghost" id="btn-copy">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              Copy YAML
-            </button>
-            <button class="btn btn-primary" id="btn-download">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              Download File
-            </button>
+        <div
+          class="card-actions justify-end mt-8 border-t border-base-content/10 pt-6"
+        >
+          <button class="btn btn-primary" id="btn-submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><line x1="22" y1="2" x2="11" y2="13"></line><polygon
+                points="22 2 15 22 11 13 2 9 22 2"></polygon></svg
+            >
+            Submit Request
+          </button>
         </div>
-
       </div>
     </div>
   </div>
-
 </BaseLayout>
 
 <script>
-  const copyBtn = document.getElementById('btn-copy');
-  const downloadBtn = document.getElementById('btn-download');
+  const copyBtn = document.getElementById("btn-copy");
+  const submitBtn = document.getElementById("btn-submit");
 
   function generateYAML() {
-    const title = (document.getElementById('input-title') as HTMLInputElement).value || "CONFERENCE 202X";
-    const subtitle = (document.getElementById('input-subtitle') as HTMLInputElement).value || "Full Conference Name";
-    const date = (document.getElementById('input-date') as HTMLInputElement).value || "Month DD-DD";
-    const location = (document.getElementById('input-location') as HTMLInputElement).value || "City, Country";
-    const deadline = (document.getElementById('input-deadline') as HTMLInputElement).value || "Month DD, YYYY";
-    const website = (document.getElementById('input-website') as HTMLInputElement).value || "https://example.com";
+    const title =
+      (document.getElementById("input-title") as HTMLInputElement).value ||
+      "CONFERENCE 202X";
+    const subtitle =
+      (document.getElementById("input-subtitle") as HTMLInputElement).value ||
+      "Full Conference Name";
+    const date =
+      (document.getElementById("input-date") as HTMLInputElement).value ||
+      "Month DD-DD";
+    const location =
+      (document.getElementById("input-location") as HTMLInputElement).value ||
+      "City, Country";
+    const deadline =
+      (document.getElementById("input-deadline") as HTMLInputElement).value ||
+      "Month DD, YYYY";
+    const website =
+      (document.getElementById("input-website") as HTMLInputElement).value ||
+      "https://example.com";
 
-    const checkboxes = document.querySelectorAll('.idx-check:checked');
-    const indices = Array.from(checkboxes).map((cb: any) => `"${cb.value}"`).join(', ');
+    const checkboxes = document.querySelectorAll(".idx-check:checked");
+    const indices = Array.from(checkboxes)
+      .map((cb: any) => `"${cb.value}"`)
+      .join(", ");
 
     return `title: "${title}"
 subtitle: "${subtitle}"
@@ -163,34 +262,32 @@ deadline: "${deadline}"
 website: "${website}"`;
   }
 
-  // Copy Action
-  copyBtn?.addEventListener('click', () => {
+  copyBtn?.addEventListener("click", () => {
     const text = generateYAML();
     navigator.clipboard.writeText(text);
-    
-    // Visual feedback
     const originalText = copyBtn.innerHTML;
     copyBtn.innerText = "Copied!";
     copyBtn.classList.add("text-success");
     setTimeout(() => {
-        copyBtn.innerHTML = originalText;
-        copyBtn.classList.remove("text-success");
+      copyBtn.innerHTML = originalText;
+      copyBtn.classList.remove("text-success");
     }, 2000);
   });
-  
-  // Download Action
-  downloadBtn?.addEventListener('click', () => {
-     const text = generateYAML();
-     const title = (document.getElementById('input-title') as HTMLInputElement).value || "event";
-     // Clean filename
-     const filename = title.toLowerCase().replace(/ /g, "-").replace(/[^a-z0-9-]/g, "") + ".yaml";
-     
-     const element = document.createElement('a');
-     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-     element.setAttribute('download', filename);
-     element.style.display = 'none';
-     document.body.appendChild(element);
-     element.click();
-     document.body.removeChild(element);
+
+  submitBtn?.addEventListener("click", () => {
+    const yamlData = generateYAML();
+    const title =
+      (document.getElementById("input-title") as HTMLInputElement).value ||
+      "New Conference";
+    const repo = "JHermosillaD/jhermosillad.github.io";
+    const issueBody = `Please add this conference to the tracker. Automate this via IssueOps.
+
+\`\`\`yaml
+${yamlData}
+\`\`\`
+`;
+
+    const url = `https://github.com/${repo}/issues/new?title=Add Event: ${encodeURIComponent(title)}&body=${encodeURIComponent(issueBody)}&labels=new-conference`;
+    window.open(url, "_blank");
   });
 </script>

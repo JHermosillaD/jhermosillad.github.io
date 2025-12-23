@@ -29,12 +29,7 @@ const {
       <div class="drawer-content bg-base-100">
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center">
-          
-          {/* CHANGED: 
-              - Removed 'lg:max-w-[900px]' (too narrow)
-              - Added 'max-w-6xl' (wider, approx 1150px)
-              - Added 'w-full' to ensure it fills the space up to the max-width
-          */}
+        
           <main class="p-6 pt-10 w-full max-w-6xl max-w-[100vw]">
             <slot />
           </main>
