@@ -4,23 +4,30 @@ import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import { Diagram, type Config } from 'astro-diagram';
+import { Image } from "astro:assets";
 
 export interface Props extends BlogSchema {}
 
 const { title, description, pubDate, updatedDate, heroImage, badge, tags = [] } = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll")
-import { Image } from "astro:assets";
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}, ogType="article">
+<BaseLayout title={title} description={description} image={heroImage}, ogType="article" maxWidth="max-w-6xl">
+  
   <main class="md:flex md:justify-center">
-    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
-      {heroImage && <Image width={750} height={422} format="webp" src={heroImage} alt={title} class="w-full mb-6" />}
+    
+    <article class="prose prose-lg max-w-none w-full prose-img:mx-auto">
+      
+      {heroImage && <Image width={1200} height={600} format="webp" src={heroImage} alt={title} class="w-full mb-6 rounded-xl shadow-lg" />}
+      
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
+      
       {pubDate && <time>{displayDate}</time>}
       <br />
+      
       {badge && <div class="badge badge-secondary my-1">{badge}</div>}
+      
       {
         tags &&
           tags.map((tag) => (
@@ -29,6 +36,7 @@ import { Image } from "astro:assets";
             </a>
           ))
       }
+      
       {
         updatedDate && (
           <div>
@@ -37,8 +45,11 @@ import { Image } from "astro:assets";
           </div>
         )
       }
+      
       <div class="divider my-2"></div>
+      
       <slot />
+      
     </article>
   </main>
 </BaseLayout>
