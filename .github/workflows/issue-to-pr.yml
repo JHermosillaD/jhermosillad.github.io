@@ -1,0 +1,61 @@
+name: Add Conference from Issue
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create_conference_pr:
+  
+    if: contains(github.event.issue.labels.*.name, 'new-conference')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Extract YAML and Create File
+        id: extract
+        run: |
+          # 1. Get the text from the issue
+          BODY="${{ github.event.issue.body }}"
+          
+          # 2. Extract strictly the content between the ```yaml and ``` blocks
+          # This cleans up any extra text the user might have written
+          YAML_CONTENT=$(echo "$BODY" | sed -n '/^```yaml$/,/^```$/p' | sed '1d;$d')
+          
+          # 3. Find the "title" inside that YAML to name the file (e.g., "TEST")
+          # This grabs the text after "title: " and removes quotes
+          TITLE=$(echo "$YAML_CONTENT" | grep "title:" | sed 's/title: "\(.*\)"/\1/' | sed 's/title: //')
+          
+          # 4. Create a clean filename (test.yaml)
+          FILENAME=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g').yaml
+          
+          # 5. Save the file into your specific data folder
+          echo "$YAML_CONTENT" > "src/content/events/$FILENAME"
+          
+          echo "Created file: src/content/events/$FILENAME"
+          
+          # Save variables for the next step
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+          echo "conf_title=$TITLE" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request (The Approval Step)
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat: add conference ${{ steps.extract.outputs.conf_title }}"
+          title: "Add ${{ steps.extract.outputs.conf_title }} to Tracker"
+          body: |
+            This PR adds **${{ steps.extract.outputs.conf_title }}** to the conference list.
+            
+            - **File:** `src/content/events/${{ steps.extract.outputs.filename }}`
+            - **Source Issue:** #${{ github.event.issue.number }}
+            
+          branch: "add-event-${{ github.event.issue.number }}"
+          base: main 
+          delete-branch: true
