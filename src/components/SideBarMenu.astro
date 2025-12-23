@@ -1,14 +1,16 @@
 ---
 const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
+const activeClass = "bg-base-300";
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-    <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-    <li><a class="py-3 text-base" id="cv" href="/cv">Resume</a></li>
-    <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
-    <li><a class="py-3 text-base" id="blog" href="/blog/">Notes</a></li>
-    <li><a class="py-3 text-base" id="research" href="/research">Research</a></li>
+    <li><a class="py-3 text-base" id="about me" href="/">About me</a></li>
+    <li><a class="py-3 text-base" id="cv" href="/cv">Professional Resume</a></li>
+    <li><a class="py-3 text-base" id="research" href="/research">Research Overview</a></li>
+    <li><a class="py-3 text-base" id="events" href="/events">Conference Tracker</a></li>
+    <li><a class="py-3 text-base" id="resources" href="/toolkit">Robotics Toolbox</a></li>
+    <li><a class="py-3 text-base" id="projects" href="/projects">Github Projects</a></li>
+    <li><a class="py-3 text-base" id="blog" href="/blog/">Lecture Notes</a></li>
 </ul>
 
 <script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
