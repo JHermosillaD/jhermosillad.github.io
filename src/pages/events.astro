@@ -17,7 +17,7 @@ const upcomingEvents = sortedEvents.filter(e => parseEventDate(e.data.date) >= n
 const pastEvents = sortedEvents.filter(e => parseEventDate(e.data.date) < now).reverse();
 ---
 
-<BaseLayout title="Conferences" sideBarActiveItemID="events" maxWidth="max-w-7xl">
+<BaseLayout title="Conferences" sideBarActiveItemID="events">
   
   <div class="mb-6 border-b border-base-300 pb-2">
     <h1 class="text-4xl font-bold text-primary">Conference Tracker</h1>
