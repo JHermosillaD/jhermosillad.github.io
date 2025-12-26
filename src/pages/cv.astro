@@ -285,9 +285,10 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     </div>
 
     <div id="robot-carousel-container" class="group relative max-w-2xl mx-auto">
-      <div id="inner-carousel" class="carousel w-full rounded-2xl shadow-xl bg-base-300">
+      <div id="robot-inner-carousel" class="carousel w-full rounded-2xl shadow-xl bg-base-300">
         {['car', 'husky', 'mitsubishi', 'nao', 'omnibot', 'uverto'].map((robot, i) => (
-          <div id={`slide${i + 1}`} class="carousel-item relative w-full flex justify-center bg-base-100">
+          /* ID changed to robot-slide-X  */
+          <div id={`robot-slide-${i + 1}`} class="carousel-item relative w-full flex justify-center bg-base-100">
             <img 
               src={`/robots/${robot}.png`} 
               class="w-full h-80 object-contain p-8" 
@@ -295,8 +296,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
             />
             {/* Manual Navigation */}
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <a href={`#slide${i === 0 ? 6 : i}`} class="btn btn-circle btn-sm btn-neutral bg-opacity-50 border-none text-white">❮</a> 
-              <a href={`#slide${i === 5 ? 1 : i + 2}`} class="btn btn-circle btn-sm btn-neutral bg-opacity-50 border-none text-white">❯</a>
+              <a href={`#robot-slide-${i === 0 ? 6 : i}`} class="btn btn-circle btn-sm btn-neutral bg-opacity-50 border-none text-white">❮</a> 
+              <a href={`#robot-slide-${i === 5 ? 1 : i + 2}`} class="btn btn-circle btn-sm btn-neutral bg-opacity-50 border-none text-white">❯</a>
             </div>
             {/* Label */}
             <div class="absolute bottom-4 bg-base-300/80 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
@@ -307,43 +308,70 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       </div>
     </div>
   </section>
+
+  <div class="divider my-16 opacity-30"></div>
+
+  <section class="mb-20 px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold">Behind the Scenes</h2>
+    </div>
+
+    <div id="work-carousel-container" class="group relative max-w-4xl mx-auto">
+      <div id="work-inner-carousel" class="carousel w-full rounded-2xl shadow-xl bg-base-300">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <div id={`work-slide-${i}`} class="carousel-item relative w-full flex justify-center items-center bg-base-100">
+            <img
+              src={`/working/img${i}.png`}
+              class="h-[28rem] w-full object-contain p-2"
+              alt={`Lab image ${i}`}
+            />
+
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a href={`#work-slide-${i === 1 ? 8 : i - 1}`} class="btn btn-circle btn-neutral bg-opacity-50 border-none text-white">❮</a>
+              <a href={`#work-slide-${i === 8 ? 1 : i + 1}`} class="btn btn-circle btn-neutral bg-opacity-50 border-none text-white">❯</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <script>
-  // Gets the scrolling container
-  const carousel = document.getElementById('inner-carousel');
-  const wrapper = document.getElementById('robot-carousel-container');
-  
-  let currentSlide = 1;
-  const totalSlides = 6;
-  let intervalId;
+  function setupCarousel(wrapperId, scrollerId, slidePrefix, totalSlides, intervalTime) {
+    const wrapper = document.getElementById(wrapperId);
+    const carousel = document.getElementById(scrollerId);
+    
+    if (!wrapper || !carousel) return;
 
-  const startAutoScroll = () => {
-    intervalId = setInterval(() => {
-      // Advance slide index
-      currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
-      const target = document.getElementById(`slide${currentSlide}`);
-      
-      if (target && carousel) {
-        // FIXED: Scrolls the carousel container ONLY, not the window
-        carousel.scrollTo({
-          left: target.offsetLeft,
-          behavior: 'smooth'
-        });
-      }
-    }, 3500); 
-  };
+    let currentSlide = 1;
+    let intervalId;
 
-  const stopAutoScroll = () => {
-    if (intervalId) clearInterval(intervalId);
-  };
+    const startAutoScroll = () => {
+      intervalId = setInterval(() => {
+        currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+        const target = document.getElementById(`${slidePrefix}${currentSlide}`);
+        
+        if (target) {
+          carousel.scrollTo({
+            left: target.offsetLeft,
+            behavior: 'smooth'
+          });
+        }
+      }, intervalTime);
+    };
 
-  // Start logic
-  startAutoScroll();
+    const stopAutoScroll = () => {
+      if (intervalId) clearInterval(intervalId);
+    };
 
-  // Pause on hover
-  if (wrapper) {
+    startAutoScroll();
+
     wrapper.addEventListener('mouseenter', stopAutoScroll);
     wrapper.addEventListener('mouseleave', startAutoScroll);
   }
+
+  setupCarousel('robot-carousel-container', 'robot-inner-carousel', 'robot-slide-', 6, 3500);
+  setupCarousel('work-carousel-container', 'work-inner-carousel', 'work-slide-', 8, 4000);
 </script>
