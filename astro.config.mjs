@@ -8,7 +8,13 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jhermosillad.github.io',
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => page !== 'https://jhermosillad.github.io/rss.xml',
+    }),
+    tailwind()
+  ],
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex]
