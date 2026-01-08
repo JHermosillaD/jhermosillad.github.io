@@ -9,7 +9,14 @@ export default defineConfig({
   site: 'https://jhermosillad.github.io',
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        if (item.url.endsWith('/rss.xml')) {
+          return undefined;
+        }
+        return item;
+      }
+    }),
     tailwind()
   ],
   markdown: {
