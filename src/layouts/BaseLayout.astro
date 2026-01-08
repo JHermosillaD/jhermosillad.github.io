@@ -20,10 +20,20 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="business">
+<html lang="en">
   <head>
     <BaseHead title={title} description={description} image={image} ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
+    
+    <script is:inline>
+      function setMode() {
+        const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+
+      setMode();
+      document.addEventListener('astro:after-swap', setMode);
+    </script>
   </head>
   <body>
     <div class="bg-base-100 drawer lg:drawer-open">

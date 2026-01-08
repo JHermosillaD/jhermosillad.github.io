@@ -16,11 +16,16 @@ export default {
     daisyui: {
         themes: [
           {
-            business: {
-              ...themes["business"],
+          light: {
               primary: "#005baa",
-              "primary-content": "#ffffff", 
             },
+          },
+          {
+          dark: {
+            ...themes["business"],
+            primary: "#005baa",
+            "primary-content": "#ffffff", 
+          },
           },
         ],
     }
