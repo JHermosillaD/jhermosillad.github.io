@@ -5,7 +5,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
-  site: 'https://jhermosillad.github.io',
+  site: 'https://jhermosillad.dev',
   integrations: [
     mdx(),
     tailwind()
